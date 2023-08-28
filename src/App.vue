@@ -2,9 +2,10 @@
 import { ref } from 'vue';
 import CalculaDias from './components/CalculaDias.vue';
 import CalculaFechas from './components/CalculaFechas.vue';
-import Calc from './components/Calc.vue';
+/* import Calc from './components/Calc.vue'; */
 import Feriados from './components/Feriados.vue';
 import Footer from './components/Footer.vue';
+import CalculaEdad from './components/CalculaEdad.vue';
 
 const hoy = ref(new Date().toLocaleDateString());
 
@@ -30,6 +31,7 @@ const hoy = ref(new Date().toLocaleDateString());
 
         <!-- <Calc></Calc> -->
         <Feriados></Feriados>
+        <CalculaEdad></CalculaEdad>
 
     </section>
     
@@ -58,6 +60,7 @@ const hoy = ref(new Date().toLocaleDateString());
 .contenedor {
     & h3 {
         font-size: 2rem;
+        margin: 2rem;
     }
 }
 .secciones {

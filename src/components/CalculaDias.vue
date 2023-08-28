@@ -48,9 +48,9 @@ const calcula = () => {
     </div>
 
     <div class="result">
-        <h3 class="centrar-texto">{{ result }} Dias.</h3>
+        <h3 v-if="result != null && result != 'x'" class="centrar-texto">{{ result }} días</h3>
         <!-- <h3>{{ resultHabiles }} Dias hábiles (Lunes a Viernes).</h3> -->
-        <button @click="calcula">Calcular</button>
+        <button @click="calcula" title="Calcular días entre las fechas">Calcular</button>
     </div>
 
     <div class="date">
