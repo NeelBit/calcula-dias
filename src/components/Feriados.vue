@@ -34,11 +34,12 @@ onMounted(async ()=> {
     await countriesAvailable();
     await feriadoDefault();
 
-    feriados.value.forEach(element => {
+    /* problema con la fecha, formato */
+    /* feriados.value.forEach(element => {
         const fechaLocal = new Date(element.date).toLocaleDateString('es-AR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
         newFeriados.value.push(fechaLocal);
         element.fechaLocal = fechaLocal;
-    });
+    }); */
 })
 
 
@@ -61,7 +62,7 @@ onMounted(async ()=> {
     <ul class="lista-feriados">
         <li v-for="feriado in feriados" :key="feriado.date">
             <div class="feriado__fecha">{{ feriado.date }}</div>
-            <div class="feriado__fechaLocal">{{ feriado.fechaLocal }}</div>
+            <!-- <div class="feriado__fechaLocal">{{ feriado.fechaLocal }}</div> -->
             <div class="feriado__nombre">{{ feriado.localName }}</div>
         </li>
     </ul>
