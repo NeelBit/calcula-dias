@@ -77,7 +77,7 @@ const calcula = (e) => {
         </div>
 
         <div class="date">
-            <h3 class="centrar-texto" v-if="date">{{ date }}</h3>
+            <!-- <h3 class="centrar-texto" v-if="date">{{ date }}</h3> -->
             <input type="date" name="date" id="date" v-model="date">
         </div>
 

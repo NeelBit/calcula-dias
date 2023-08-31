@@ -23,6 +23,7 @@ const hoy = ref(new Date().toLocaleDateString());
         <div class="secciones">
             <CalculaDias></CalculaDias>
             <CalculaFechas></CalculaFechas>
+            <CalculaEdad></CalculaEdad>
         </div>
 
     </main>
@@ -31,7 +32,6 @@ const hoy = ref(new Date().toLocaleDateString());
 
         <!-- <Calc></Calc> -->
         <Feriados></Feriados>
-        <CalculaEdad></CalculaEdad>
 
     </section>
     
