@@ -51,7 +51,7 @@ onMounted(async ()=> {
 
 <article class="feriados">
 
-    <h2>Feriados</h2>
+    <h2 class="sombreado-h2">Feriados</h2>
     <div>
         <select name="paises" id="paises" @change="mostrarFeriados">
             <option selected>SELECCIONA TU PAÍS</option>

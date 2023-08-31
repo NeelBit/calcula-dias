@@ -41,21 +41,27 @@ const calcula = () => {
 
 <template>
 
-<section class="calcula-dias">
+<section >
 
-    <div class="date">
-        <input type="date" name="dateOne" id="dateOne" v-model="dateOne">
-    </div>
+    <h2 class="sombreado-h2">Calcula los días transcurridos entre las fechas</h2>
 
-    <div class="result">
-        <h3 v-if="result != null && result != 'x'" class="centrar-texto">{{ result }} días</h3>
-        <!-- <h3>{{ resultHabiles }} Dias hábiles (Lunes a Viernes).</h3> -->
-        <button @click="calcula" title="Calcular días entre las fechas">Calcular</button>
-    </div>
+    <article class="calcula-dias">
+        <div class="date">
+            <input type="date" name="dateOne" id="dateOne" v-model="dateOne">
+        </div>
 
-    <div class="date">
-        <input type="date" name="dateTwo" id="dateTwo" v-model="dateTwo">
-    </div>
+        <div class="result">
+            <h3 v-if="result != null && result != 'x'" class="centrar-texto">{{ result }} días</h3>
+            <!-- <h3>{{ resultHabiles }} Dias hábiles (Lunes a Viernes).</h3> -->
+            <button @click="calcula" title="Calcular días entre las fechas">Calcular</button>
+        </div>
+
+        <div class="date">
+            <input type="date" name="dateTwo" id="dateTwo" v-model="dateTwo">
+        </div>
+    </article>
+
+
 
 </section>
 
@@ -64,14 +70,19 @@ const calcula = () => {
 
 <style scoped>
 
+section {
+    border-bottom: .5rem solid var(--color-principal);
+    & h2 {
+    margin-bottom: var(--separacion);
+}
+}
+
 .calcula-dias {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     gap: var(--separacion);
-
-    border-bottom: .5rem solid var(--color-principal);
 }
 
 @media (min-width: 480px) {

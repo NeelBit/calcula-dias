@@ -59,33 +59,39 @@ const calcula = (e) => {
 
 <template>
 
-<section class="calcula-fechas">
+<section >
 
-    <div class="dias resta">
-        <label for="diaResta">Resta días</label>
-        <div class="entrada">
-            <button title="limpiar" @click="diaResta = null"><v-icon name="ri-delete-bin-fill"/></button>
-            <input type="number" name="diaResta" id="diaResta" min="0" v-model="diaResta" @change="calcula">
-            <button title="calcular" id="btnDiaResta" @click="calcula" ><v-icon name="co-calculator"/></button>
+    <h2 class="sombreado-h2">Calcula una fecha sumando o restando días</h2>
+
+    <article class="calcula-fechas">
+
+        <div class="dias resta">
+            <label for="diaResta">Resta días</label>
+            <div class="entrada">
+                <button title="limpiar" @click="diaResta = null"><v-icon name="ri-delete-bin-fill"/></button>
+                <input type="number" name="diaResta" id="diaResta" min="0" v-model="diaResta" @change="calcula">
+                <button title="calcular" id="btnDiaResta" @click="calcula" ><v-icon name="co-calculator"/></button>
+            </div>
+            
+            <h3 v-if="resultDiaResta">{{ resultDiaResta.toLocaleDateString() }}</h3>
         </div>
-        
-        <h3 v-if="resultDiaResta">{{ resultDiaResta.toLocaleDateString() }}</h3>
-    </div>
 
-    <div class="date">
-        <h3 class="centrar-texto" v-if="date">{{ date }}</h3>
-        <input type="date" name="date" id="date" v-model="date">
-    </div>
-
-    <div class="dias suma">
-        <label for="diasuma">Suma días</label>
-        <div class="entrada">
-            <button title="limpiar" @click="diaSuma = null"><v-icon name="ri-delete-bin-fill"/></button>
-            <input type="number" name="diaSuma" id="diaSuma" min="0" v-model="diaSuma" @change="calcula">
-            <button title="calcular" id="btnDiaSuma" @click="calcula"><v-icon name="co-calculator"/></button>
+        <div class="date">
+            <h3 class="centrar-texto" v-if="date">{{ date }}</h3>
+            <input type="date" name="date" id="date" v-model="date">
         </div>
-        <h3 v-if="resultDiaSuma">{{ resultDiaSuma.toLocaleDateString() }}</h3>
-    </div>
+
+        <div class="dias suma">
+            <label for="diasuma">Suma días</label>
+            <div class="entrada">
+                <button title="limpiar" @click="diaSuma = null"><v-icon name="ri-delete-bin-fill"/></button>
+                <input type="number" name="diaSuma" id="diaSuma" min="0" v-model="diaSuma" @change="calcula">
+                <button title="calcular" id="btnDiaSuma" @click="calcula"><v-icon name="co-calculator"/></button>
+            </div>
+            <h3 v-if="resultDiaSuma">{{ resultDiaSuma.toLocaleDateString() }}</h3>
+        </div>
+
+    </article>
 
 </section>
 
@@ -94,9 +100,13 @@ const calcula = (e) => {
 
 <style scoped>
 
-.calcula-fechas {
+section {
     border-bottom: .5rem solid var(--color-principal);
-
+    & h2 {
+        margin-bottom: var(--separacion);
+    }
+}
+.calcula-fechas {
     display: flex;
     flex-direction: column;
     justify-content: space-between;

@@ -16,15 +16,25 @@ const edad = computed(() => {
     if (nacimiento.value) {
         return formatDistanceToNow(new Date(nacimiento.value), {locale: es});
     }
-    
 });
 
 const nacimientoCalculado = () => {
-    Swal.fire(
+    const fechaNacimiento = new Date(nacimiento.value);
+    const fechaHoy = new Date();
+
+    if (fechaNacimiento.getTime() < fechaHoy.getTime()) {
+        Swal.fire(
             'Edad calculada!',
             `Felicidades tienes ${edad.value}!`,
             'success'
         )
+    } else {
+        Swal.fire(
+            'Edad calculada!',
+            `Felicidades vienes del futuro, aún eres un feto probablemente, la diferencia de días es ${edad.value}!`,
+            'success'
+        )
+    }
 }
 
 </script>
@@ -33,7 +43,7 @@ const nacimientoCalculado = () => {
 <template>
 
 <article class="calcula-edad">
-    <h2>Calcula edad</h2>
+    <h2 class="sombreado-h2">Calcula edad</h2>
 
     <div class="nacimiento">
         <input @change="nacimientoCalculado" type="date" name="nacimiento" id="nacimiento" v-model="nacimiento">
@@ -50,10 +60,19 @@ const nacimientoCalculado = () => {
 
 .calcula-edad {
     margin: var(--separacion) 0;
+
+    & h2 {
+        margin-bottom: var(--separacion);
+    }
 }
 .nacimiento  {
     display: grid;
     place-content: center;
+
+    & .nacimiento__resultado {
+        text-align: center;
+        font-weight: 800;
+    }
 }
 
 </style>
