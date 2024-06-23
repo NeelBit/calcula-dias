@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "cally": "^0.7.1",
     "date-fns": "^2.30.0",
     "oh-vue-icons": "^1.0.0-rc3",
     "pinia": "^2.1.3",

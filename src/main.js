@@ -22,6 +22,15 @@ import {
 import App from './App.vue';
 
 const app = createApp(App);
+/* , {
+    component: {
+        CalendarMonth,
+        CalendarDate
+    },
+    compilerOptions: {
+        isCustomElement: tag => tag.startsWith('calendar-')
+    }
+} */
 
 app.component("v-icon", OhVueIcon);
 
