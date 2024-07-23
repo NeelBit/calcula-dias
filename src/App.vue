@@ -1,5 +1,6 @@
 <script setup>
 
+import Separador from './components/Separador.vue';
 import Calendar from './components/Calendar.vue';
 import CalculaDias from './components/CalculaDias.vue';
 import CalculaFechas from './components/CalculaFechas.vue';
@@ -22,9 +23,13 @@ import CalculaEdad from './components/CalculaEdad.vue';
     <main class="contenedor">
         <div class="secciones">
             <Calendar></Calendar>
+            <Separador></Separador>
             <CalculaDias></CalculaDias>
+            <Separador></Separador>
             <CalculaFechas></CalculaFechas>
+            <Separador></Separador>
             <CalculaEdad></CalculaEdad>
+            <Separador></Separador>
             <Feriados></Feriados>
         </div>
     </main>

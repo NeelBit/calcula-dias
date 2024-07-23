@@ -61,7 +61,7 @@ const calcula = (e) => {
 
 <section >
 
-    <h2 class="sombreado-h2">Calcula una fecha sumando o restando días</h2>
+    <h2 class="sombreado-h2">Suma o resta una fecha</h2>
 
     <article class="calcula-fechas">
 
@@ -72,12 +72,13 @@ const calcula = (e) => {
                 <input type="number" name="diaResta" id="diaResta" min="0" v-model="diaResta" @change="calcula">
                 <button title="calcular" id="btnDiaResta" @click="calcula" ><v-icon name="co-calculator"/></button>
             </div>
-            
-            <h3 v-if="resultDiaResta">{{ resultDiaResta.toLocaleDateString() }}</h3>
+            <div class="result">
+                <h3 v-if="resultDiaResta">{{ resultDiaResta.toLocaleDateString() }}</h3>
+            </div>
         </div>
 
         <div class="date">
-            <!-- <h3 class="centrar-texto" v-if="date">{{ date }}</h3> -->
+            <label for="date">Selecciona una fecha</label>
             <input type="date" name="date" id="date" v-model="date">
         </div>
 
@@ -88,7 +89,10 @@ const calcula = (e) => {
                 <input type="number" name="diaSuma" id="diaSuma" min="0" v-model="diaSuma" @change="calcula">
                 <button title="calcular" id="btnDiaSuma" @click="calcula"><v-icon name="co-calculator"/></button>
             </div>
-            <h3 v-if="resultDiaSuma">{{ resultDiaSuma.toLocaleDateString() }}</h3>
+            <div class="result">
+                <h3 v-if="resultDiaSuma">{{ resultDiaSuma.toLocaleDateString() }}</h3>
+            </div>
+
         </div>
 
     </article>
@@ -100,12 +104,6 @@ const calcula = (e) => {
 
 <style scoped>
 
-section {
-    border-bottom: .5rem solid var(--color-principal);
-    & h2 {
-        margin-bottom: var(--separacion);
-    }
-}
 .calcula-fechas {
     display: flex;
     flex-direction: column;
@@ -134,13 +132,6 @@ section {
         margin: 0 auto;
     }
 
-    & h3 {
-        text-align: center;
-        padding: .5rem;
-        border: 2px var(--color-principal) solid;
-        border-radius: var(--redondeo);
-        margin-top: .5rem;
-    }
 }
 
 @media (min-width: 480px) {

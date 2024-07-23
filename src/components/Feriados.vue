@@ -97,6 +97,10 @@ onMounted(async ()=> {
         background-color: var(--color-principal);
     }
 
+    & li:hover { 
+        color: var(--vt-c-white);
+    }
+
 }
 
 .feriado__fecha {

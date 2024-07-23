@@ -5,9 +5,29 @@ import {es} from 'date-fns/locale';
 import Swal from 'sweetalert2';
 
 const hoy = ref(null);
+const hoyYMD = ref(null);
+
+// Obtener la fecha actual en formato YYYY-MM-DD
+const today = () => { 
+    const today = new Date();
+    hoy.value = today;
+    let dd = today.getDate();
+    let mm = today.getMonth() + 1; // January is 0!
+    let yyyy = today.getFullYear();
+
+    if (dd < 10) {
+        dd = '0' + dd;
+    }
+
+    if (mm < 10) {
+        mm = '0' + mm;
+    }
+
+    hoyYMD.value = yyyy + '-' + mm + '-' + dd;
+}
 
 onMounted(() => {
-    hoy.value = new Date();
+    today();
 })
 
 const nacimiento = ref("");
@@ -46,9 +66,15 @@ const nacimientoCalculado = () => {
     <h2 class="sombreado-h2">Calcula edad</h2>
 
     <div class="nacimiento">
-        <input @change="nacimientoCalculado" type="date" name="nacimiento" id="nacimiento" v-model="nacimiento">
+        <div class="entrada date">
+            <label for="nacimiento">Ingresa tu nacimiento</label>
+            <input @change="nacimientoCalculado" type="date" name="nacimiento" id="nacimiento" v-model="nacimiento" :max="hoyYMD">
+        </div>
 
-        <div v-if="edad" class="nacimiento__resultado">Tienes {{ edad }} </div>
+        <div class="result">
+            <h3 v-if="edad" class="nacimiento__resultado">Tienes {{ edad }} </h3>
+        </div>
+
     </div>
 
 </article>
@@ -59,16 +85,9 @@ const nacimientoCalculado = () => {
 <style scoped>
 
 .calcula-edad {
-    margin: var(--separacion) 0;
-
-    & h2 {
-        margin-bottom: var(--separacion);
-    }
+    /*  */
 }
 .nacimiento  {
-    display: grid;
-    place-content: center;
-
     & .nacimiento__resultado {
         text-align: center;
         font-weight: 800;
