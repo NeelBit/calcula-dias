@@ -537,3 +537,13 @@ input[type="date"] {
     box-shadow: inset 100svw 0 0 0 var(--color-principal);
     color: var(--vt-c-white);
 }
+
+
+.date {
+    label {
+        text-align: center;
+        margin: .5rem;
+        display: block;
+        width: 100%;
+    }
+}

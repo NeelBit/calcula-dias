@@ -47,6 +47,7 @@ const calcula = () => {
 
     <article class="calcula-dias">
         <div class="date">
+            <label for="dateOne">Selecciona fecha</label>
             <input type="date" name="dateOne" id="dateOne" v-model="dateOne">
         </div>
 
@@ -57,11 +58,10 @@ const calcula = () => {
         </div>
 
         <div class="date">
+            <label for="dateTwo">Selecciona fecha</label>
             <input type="date" name="dateTwo" id="dateTwo" v-model="dateTwo">
         </div>
     </article>
-
-
 
 </section>
 

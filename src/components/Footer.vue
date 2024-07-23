@@ -1,31 +1,48 @@
-<script setup>
-
-import { ref } from 'vue';
-const year = ref(new Date().getFullYear());
-
-</script>
-
-
 <template>
 
 <footer class="contenedor-footer">
     <div class="derechos-autor">
-        <small class="footer__texto">Todos los derechos reservados {{year}}</small>
-        <small class="footer__autor">By Neel</small>
+        <small class="footer__autor">By 
+            <a href="https://portfolio-neelbit.netlify.app/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                > 
+                Neel
+            </a>
+        </small>
     </div>
 
     <div class="redes-sociales">
         <div class="contenedor-icono">
-            <a href="https://twitter.com/NeelBit" target="_blank">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00acee" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+            <a href="https://x.com/NeelBit" target="_blank">
+                <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="24" 
+                height="24" 
+                viewBox="0 0 512 512" 
+                stroke-width="1.5" 
+                stroke="#171515" 
+                stroke-linecap="round" 
+                stroke-linejoin="round">
+                    <path 
+                        d="M 73.14285714285714 0 Q 42.285714285714285 1.1428571428571428 21.714285714285715 21.714285714285715 L 21.714285714285715 21.714285714285715 L 21.714285714285715 21.714285714285715 Q 1.1428571428571428 42.285714285714285 0 73.14285714285714 L 0 438.85714285714283 L 0 438.85714285714283 Q 1.1428571428571428 469.7142857142857 21.714285714285715 490.2857142857143 Q 42.285714285714285 510.85714285714283 73.14285714285714 512 L 438.85714285714283 512 L 438.85714285714283 512 Q 469.7142857142857 510.85714285714283 490.2857142857143 490.2857142857143 Q 510.85714285714283 469.7142857142857 512 438.85714285714283 L 512 73.14285714285714 L 512 73.14285714285714 Q 510.85714285714283 42.285714285714285 490.2857142857143 21.714285714285715 Q 469.7142857142857 1.1428571428571428 438.85714285714283 0 L 73.14285714285714 0 L 73.14285714285714 0 Z M 412.57142857142856 96 L 293.7142857142857 232 L 412.57142857142856 96 L 293.7142857142857 232 L 433.14285714285717 416 L 433.14285714285717 416 L 324.57142857142856 416 L 324.57142857142856 416 L 238.85714285714286 304 L 238.85714285714286 304 L 140.57142857142858 416 L 140.57142857142858 416 L 86.85714285714286 416 L 86.85714285714286 416 L 213.71428571428572 270.85714285714283 L 213.71428571428572 270.85714285714283 L 80 96 L 80 96 L 192 96 L 192 96 L 268.57142857142856 198.85714285714286 L 268.57142857142856 198.85714285714286 L 358.85714285714283 96 L 358.85714285714283 96 L 412.57142857142856 96 L 412.57142857142856 96 Z M 369.14285714285717 384 L 174.85714285714286 126.85714285714286 L 369.14285714285717 384 L 174.85714285714286 126.85714285714286 L 142.85714285714286 126.85714285714286 L 142.85714285714286 126.85714285714286 L 339.42857142857144 384 L 339.42857142857144 384 L 369.14285714285717 384 L 369.14285714285717 384 Z" 
+                    />
                 </svg>
             </a>
         </div>
         <div class="contenedor-icono">
             <a href="https://github.com/NeelBit" target="_blank">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#171515" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                class="icon icon-tabler icon-tabler-brand-github" 
+                idth="24" 
+                height="24" 
+                viewBox="0 0 24 24" 
+                stroke-width="1.5" 
+                stroke="#171515" 
+                fill="none" 
+                stroke-linecap="round" 
+                stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
                 </svg>
@@ -47,12 +64,6 @@ footer {
     justify-content: space-around;
     padding: 1rem;
     color: var(--vt-c-white-mute);
-}
-
-@media (min-width: 480px) {
-    footer {
-        flex-direction: row;
-    }
 }
 
 .derechos-autor {
@@ -93,14 +104,6 @@ footer {
     justify-content: center;
     align-items: center;
     background-color: var(--vt-c-white-soft);
-}
-
-.contenedor-icono a:hover {
-    /* transform: rotate(0.5turn); */
-    /* transform: rotate(360deg); */
-    /* transform: translate3d(2px, 10%, 3em); */
-
-    /* animation: icono 2.5s; */
 }
 
 .contenedor-icono:hover {

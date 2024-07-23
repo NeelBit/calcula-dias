@@ -8,10 +8,11 @@ import {
 
 import {
     RiDeleteBinFill,
-    CoCalculator
+    CoCalculator,
+    FcCalculator
 } from "oh-vue-icons/icons";
 
-addIcons(RiDeleteBinFill, CoCalculator);
+addIcons(RiDeleteBinFill, CoCalculator, FcCalculator);
 
 import {
     createApp
