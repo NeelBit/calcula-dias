@@ -1,6 +1,6 @@
 <script setup>
 
-import { capitalize, onMounted, ref } from 'vue';
+import { onMounted, ref } from 'vue';
 
 const paisesDisponibles = ref([]);
 const feriados = ref(null);
@@ -22,27 +22,38 @@ const mostrarFeriados = async (e) => {
     const res = await fetch(`https://date.nager.at/api/v3/publicholidays/${year}/${cod.value}`);
     const data = await res.json();
     feriados.value = data;
+
+    mostrarFeriadosFormal();
 }
 
 const feriadoDefault = async () => {
     const res = await fetch(`https://date.nager.at/api/v3/publicholidays/${year}/AR`);
     const data = await res.json();
     feriados.value = data;
+    mostrarFeriadosFormal();
+}
+
+const mostrarFeriadosFormal = () => {
+    newFeriados.value = [];
+    feriados.value.forEach(element => {
+        const fechaLocal = new Date(element.date).toLocaleDateString('es-AR', 
+            { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                timeZone: 'UTC'
+            }
+        );
+        newFeriados.value.push(fechaLocal);
+        element.fechaFormal = fechaLocal;
+    });
 }
 
 onMounted(async ()=> {
     await countriesAvailable();
     await feriadoDefault();
-
-    /* problema con la fecha, formato */
-    /* feriados.value.forEach(element => {
-        const fechaLocal = new Date(element.date).toLocaleDateString('es-AR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-        newFeriados.value.push(fechaLocal);
-        element.fechaLocal = fechaLocal;
-    }); */
 })
-
-
 
 </script>
 
@@ -61,8 +72,8 @@ onMounted(async ()=> {
 
     <ul class="lista-feriados">
         <li v-for="feriado in feriados" :key="feriado.date">
+            <div class="feriado__fechaformal">{{ feriado.fechaFormal }}</div>
             <div class="feriado__fecha">{{ feriado.date }}</div>
-            <!-- <div class="feriado__fechaLocal">{{ feriado.fechaLocal }}</div> -->
             <div class="feriado__nombre">{{ feriado.localName }}</div>
         </li>
     </ul>
@@ -86,9 +97,8 @@ onMounted(async ()=> {
     padding: 0;
 
     & li {
-        /* display: flex;
-        justify-content: flex-start;
-        gap: var(--separacion); */
+        display: flex;
+        flex-wrap: wrap;
         padding: .5rem;
         border: 1px solid var(--color-principal);
     }
@@ -102,10 +112,20 @@ onMounted(async ()=> {
     }
 
 }
-
+.feriado__fechaformal {
+    width: 50%;
+    text-transform: capitalize
+}
 .feriado__fecha {
-    /* width: 150px;
-    height: 100px; */
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    border: 1px white solid;
+    border-radius: var(--redondeo);
+}
+.feriado__nombre {
+    padding: .5rem 0;
+    text-transform: uppercase;
 }
 
 select {
