@@ -59,7 +59,7 @@ const calcula = (e) => {
 
 <template>
 
-<section >
+<section id="fechas">
 
     <h2 class="sombreado-h2">Suma o resta una fecha</h2>
 
@@ -135,7 +135,7 @@ const calcula = (e) => {
 }
 
 @media (min-width: 480px) {
-
+    
     .calcula-fechas {
         flex-direction: row;
         align-items: end;

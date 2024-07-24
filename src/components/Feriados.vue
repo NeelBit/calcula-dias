@@ -49,7 +49,7 @@ onMounted(async ()=> {
 
 <template>
 
-<article class="feriados">
+<section id="feriados" class="feriados">
 
     <h2 class="sombreado-h2">Feriados</h2>
     <div>
@@ -67,7 +67,7 @@ onMounted(async ()=> {
         </li>
     </ul>
 
-</article>
+</section>
 
 </template>
 

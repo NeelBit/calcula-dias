@@ -1,5 +1,6 @@
 <script setup>
 
+import NavComponent from "./components/NavComponent.vue";
 import Separador from './components/Separador.vue';
 import Calendar from './components/Calendar.vue';
 import CalculaDias from './components/CalculaDias.vue';
@@ -17,7 +18,10 @@ import CalculaEdad from './components/CalculaEdad.vue';
 
 <template>
     <header class="header">
-        <h2>Calculadora de Días</h2>
+        <div class="wrapper ">
+            <h2>Calculadora de Días</h2>
+            <NavComponent></NavComponent>
+        </div>
     </header>
 
     <main class="contenedor">
@@ -40,16 +44,36 @@ import CalculaEdad from './components/CalculaEdad.vue';
 <style scoped>
 
 .header {
-    background-color: var(--vt-c-indigo);
-
+    position: sticky;
+    top: 0;
     display: grid;
-    place-content: center;
-    height: 6rem;
-
+    align-items: center;
+    background-color: var(--vt-c-indigo);
+    height: 8rem;
+    margin: 0 auto;
     color: var(--vt-c-white-mute);
+}
 
-    & h2 {
-        text-align: center;
+.wrapper {
+        max-width: 1200px;
+        padding: .5rem;
+        margin: 0 auto;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--separacion);
+
+        h2 {
+            text-align: center;
+            z-index: 10;
+        }
+    }
+
+@media (min-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+        gap: 0;
     }
 }
 

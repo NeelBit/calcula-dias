@@ -564,3 +564,7 @@ input[type="date"] {
         border-radius: var(--redondeo);
     }
 }
+
+section {
+    scroll-margin-top: 8rem;
+}

@@ -1,4 +1,5 @@
 <script setup>
+import BtnCalcula from './BtnCalcula.vue';
 import { computed, onMounted, ref } from "vue";
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import {es} from 'date-fns/locale';
@@ -62,13 +63,14 @@ const nacimientoCalculado = () => {
 
 <template>
 
-<article class="calcula-edad">
+<section id="edad" class="calcula-edad">
     <h2 class="sombreado-h2">Calcula edad</h2>
 
     <div class="nacimiento">
         <div class="entrada date">
             <label for="nacimiento">Ingresa tu nacimiento</label>
-            <input @change="nacimientoCalculado" type="date" name="nacimiento" id="nacimiento" v-model="nacimiento" :max="hoyYMD">
+            <input @keyup.enter="nacimientoCalculado" type="date" name="nacimiento" id="nacimiento" v-model="nacimiento" :max="hoyYMD">
+            <BtnCalcula @calcula="nacimientoCalculado" title="Calcular edad"></BtnCalcula>
         </div>
 
         <div class="result">
@@ -77,7 +79,7 @@ const nacimientoCalculado = () => {
 
     </div>
 
-</article>
+</section>
 
 </template>
 
@@ -87,7 +89,12 @@ const nacimientoCalculado = () => {
 .calcula-edad {
     /*  */
 }
+
 .nacimiento  {
+    display: flex;
+    flex-direction: column;
+    gap: var(--separacion);
+
     & .nacimiento__resultado {
         text-align: center;
         font-weight: 800;

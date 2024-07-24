@@ -21,7 +21,7 @@ const onChange = (event) => {
         day: 'numeric',
         timeZone: 'UTC'}
     );
-    
+
     change.value = true;
 }
 
@@ -29,6 +29,8 @@ const onChange = (event) => {
 
 
 <template>
+
+<section id="calendar">
 
 <calendar-date class="calendar" :months="2" v-model.lazy="selected" @change="onChange">
     <!-- botones de atrás y siguiente -->
@@ -58,6 +60,8 @@ const onChange = (event) => {
 <h4 v-if="change" class="centrar-texto">Seleccionaste: {{fechaActualFormal}}</h4>
 <h3 v-else class="centrar-texto">Hoy es: {{ selected }}</h3>
 
+</section>
+
 </template>
 
 
@@ -65,8 +69,8 @@ const onChange = (event) => {
 
 calendar-date {
     svg {
-        height: 20px;
         width: 20px;
+        height: 20px;
         fill: none;
         stroke: currentColor;
         stroke-width: 1.5;
@@ -92,9 +96,9 @@ svg:focus, svg:hover, path:focus, path:hover {
 }
 .grid {
     display: flex;
-    gap: 1em;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 1em;
     margin: auto 0;
 }
 

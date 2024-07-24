@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 import Swal from 'sweetalert2';
+import BtnCalcula from './BtnCalcula.vue';
 
 const result = ref("x");
 
@@ -40,7 +41,7 @@ const calcula = () => {
 
 <template>
 
-<section >
+<section id="dias">
 
     <h2 class="sombreado-h2">Calcula días transcurridos entre fechas</h2>
 
@@ -52,7 +53,7 @@ const calcula = () => {
 
         <div class="result">
             <h3 v-if="result != null && result != 'x'" class="centrar-texto">{{ result }} días</h3>
-            <button @click="calcula" title="Calcular días entre las fechas">Calcular</button>
+            <BtnCalcula @calcula="calcula" title="Calcular días entre las fechas"></BtnCalcula>
         </div>
 
         <div class="date">
@@ -81,12 +82,6 @@ const calcula = () => {
         flex-direction: row;
         align-items: flex-end;
     }
-}
-
-button {
-    padding: .5rem 1rem;
-    border-radius: var(--redondeo);
-    text-transform: uppercase;
 }
 
 </style>
