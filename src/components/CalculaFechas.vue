@@ -61,7 +61,11 @@ const calcula = (e) => {
 
 <section id="fechas">
 
-    <h2 class="sombreado-h2">Suma o resta una fecha</h2>
+    <div class="sombreado-h2 section-title">
+        <v-icon name="bi-calendar2-week"/>
+        <h2>Suma o resta una fecha</h2>        
+    </div>
+
 
     <article class="calcula-fechas">
 

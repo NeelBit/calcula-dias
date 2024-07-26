@@ -62,8 +62,12 @@ onMounted(async ()=> {
 
 <section id="feriados" class="feriados">
 
-    <h2 class="sombreado-h2">Feriados</h2>
-    <div>
+    <div class="sombreado-h2 section-title">
+        <v-icon name="bi-calendar2-x"/>
+        <h2>Feriados</h2>
+    </div>
+
+    <div class="contenedor-select">
         <select name="paises" id="paises" @change="mostrarFeriados">
             <option selected>SELECCIONA TU PAÍS</option>
             <option v-for="pais in paisesDisponibles" :key="pais.countryCode" :value="pais.countryCode" :selected="pais.countryCode === 'AR'">{{ pais.name }}</option>
@@ -91,6 +95,10 @@ onMounted(async ()=> {
     gap: var(--separacion);
 }
 
+.contenedor-select {
+    margin: 0 auto;
+}
+
 .lista-feriados {
     list-style: none;
     margin: 0;
@@ -112,20 +120,30 @@ onMounted(async ()=> {
     }
 
 }
+
+.feriado__fecha, .feriado__fechaformal {
+    min-height: 50px;
+}
+
 .feriado__fechaformal {
     width: 50%;
-    text-transform: capitalize
+    text-transform: capitalize;
+    align-content: center;
 }
 .feriado__fecha {
     width: 50%;
     height: 100%;
     text-align: center;
+    align-content: center;
     border: 1px white solid;
     border-radius: var(--redondeo);
 }
 .feriado__nombre {
+    width: 100%;
+    min-height: 50px;
     padding: .5rem 0;
     text-transform: uppercase;
+    border-top: 1px solid;
 }
 
 select {

@@ -9,10 +9,16 @@ import {
 import {
     RiDeleteBinFill,
     CoCalculator,
-    FcCalculator
+    FcCalculator,
+    CoCalendarCheck, // item menu calendario
+    LaCloudSunRainSolid, // item menu pronostico
+    PxCalendarToday, // item menu calcula día
+    BiCalendar2Week, // item menu calcula fechas
+    BiCalendarHeart, // item menu calcula edad
+    BiCalendar2X, // item menu calcula feriados
 } from "oh-vue-icons/icons";
 
-addIcons(RiDeleteBinFill, CoCalculator, FcCalculator);
+addIcons(RiDeleteBinFill, CoCalculator, FcCalculator, CoCalendarCheck, LaCloudSunRainSolid, PxCalendarToday, BiCalendar2Week, BiCalendarHeart, BiCalendar2X);
 
 import {
     createApp

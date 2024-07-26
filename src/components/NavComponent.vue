@@ -10,26 +10,37 @@ const items = [
         id: "#calendar",
         name: "calendar",
         title: "Calendario",
+        icon:     "co-calendar-check",
+    },
+    {
+        id: "#pronostico",
+        name: "pronostico",
+        title: "Pronóstico",
+        icon: "la-cloud-sun-rain-solid"
     },
     {
         id: "#dias",
         name: "dias",
         title: "Calcula día",
+        icon: "px-calendar-today"
     },
     {
         id: "#fechas",
         name: "fechas",
         title: "Calcula fechas",
+        icon: "bi-calendar2-week"
     },
     {
         id: "#edad",
         name: "edad",
         title: "Calcula edad",
+        icon: "bi-calendar-heart"
     },
     {
         id: "#feriados",
         name: "feriados",
         title: "Feriados",
+        icon: "bi-calendar2-x"
     }
 ];
 
@@ -49,9 +60,11 @@ const items = [
         <ul class="nav__list">
             <li v-for="item in items" 
             :key="item.name" 
-            class="nav__item">
+            class="nav__item"
+            :title="item.title">
                 <a 
                 @click.prevent="scrollToSection(`${item.id}`)">
+                    <v-icon :name="item.icon"/>
                     {{ item.title }}
                 </a>
             </li>
@@ -65,7 +78,6 @@ const items = [
 <style scoped>
 
 .nav {
-    width: 50%;
     height: 8rem;
 }
 
@@ -118,6 +130,16 @@ const items = [
 
 .nav__item {
     cursor: pointer;
+}
+
+.nav__item a {
+    padding: .5rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
 }
 
 @media (min-width: 768px) {

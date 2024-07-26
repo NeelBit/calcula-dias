@@ -3,12 +3,13 @@
 import NavComponent from "./components/NavComponent.vue";
 import Separador from './components/Separador.vue';
 import Calendar from './components/Calendar.vue';
+import Pronostico from './components/pronostico/Pronostico.vue';
 import CalculaDias from './components/CalculaDias.vue';
 import CalculaFechas from './components/CalculaFechas.vue';
 /* import Calc from './components/Calc.vue'; */
+import CalculaEdad from './components/CalculaEdad.vue';
 import Feriados from './components/Feriados.vue';
 import Footer from './components/Footer.vue';
-import CalculaEdad from './components/CalculaEdad.vue';
 
 /* hoy */
 //const hoy = ref(new Date().toLocaleDateString());
@@ -27,6 +28,7 @@ import CalculaEdad from './components/CalculaEdad.vue';
     <main class="contenedor">
         <div class="secciones">
             <Calendar></Calendar>
+            <Pronostico></Pronostico>
             <Separador></Separador>
             <CalculaDias></CalculaDias>
             <Separador></Separador>
@@ -46,6 +48,7 @@ import CalculaEdad from './components/CalculaEdad.vue';
 .header {
     position: sticky;
     top: 0;
+    z-index: 11;
     display: grid;
     align-items: center;
     background-color: var(--vt-c-indigo);
@@ -59,6 +62,7 @@ import CalculaEdad from './components/CalculaEdad.vue';
         padding: .5rem;
         margin: 0 auto;
         width: 100%;
+        height: 8rem;
         display: flex;
         justify-content: space-between;
         align-items: center;

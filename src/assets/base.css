@@ -568,3 +568,8 @@ input[type="date"] {
 section {
     scroll-margin-top: 8rem;
 }
+
+.section-title {
+    display: flex;
+    align-items: center;
+}

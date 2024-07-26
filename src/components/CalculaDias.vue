@@ -43,7 +43,10 @@ const calcula = () => {
 
 <section id="dias">
 
-    <h2 class="sombreado-h2">Calcula días transcurridos entre fechas</h2>
+    <div class="sombreado-h2 section-title">
+        <v-icon name="px-calendar-today"/>
+        <h2>Calcula días transcurridos entre fechas</h2>
+    </div>
 
     <article class="calcula-dias">
         <div class="date">

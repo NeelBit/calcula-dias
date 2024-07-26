@@ -64,7 +64,11 @@ const nacimientoCalculado = () => {
 <template>
 
 <section id="edad" class="calcula-edad">
-    <h2 class="sombreado-h2">Calcula edad</h2>
+
+    <div class="sombreado-h2 section-title">
+        <v-icon name="bi-calendar-heart"/>
+        <h2>Calcula edad</h2>
+    </div>
 
     <div class="nacimiento">
         <div class="entrada date">
