@@ -1,7 +1,7 @@
 # calcula-dias
 
 Captura 27-07-2024
-![captura de pantalla app para calcular dias y fechas en Vue 3](https://github.com/NeelBit/calcula-dias/blob/master/cap-2024_07_27.jpeg)
+![captura de pantalla app para calcular dias y fechas en Vue 3](https://github.com/NeelBit/calcula-dias/blob/master/cap-2024_07_27.png)
 
 Captura 18-07-2023
 ![captura de pantalla app para calcular dias y fechas en Vue 3](https://github.com/NeelBit/calcula-dias/blob/master/cap-2023_07_18.jpeg)
