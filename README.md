@@ -1,6 +1,10 @@
 # calcula-dias
 
-![captura de pantalla app para calcular dias y fechas en Vue 3](https://github.com/NeelBit/calcula-dias/blob/master/Cap.jpeg)
+Captura 27-07-2024
+![captura de pantalla app para calcular dias y fechas en Vue 3](https://github.com/NeelBit/calcula-dias/blob/master/cap-2024_07_27.jpeg)
+
+Captura 18-07-2023
+![captura de pantalla app para calcular dias y fechas en Vue 3](https://github.com/NeelBit/calcula-dias/blob/master/cap-2023_07_18.jpeg)
 
 This template should help get you started developing with Vue 3 in Vite.
 
